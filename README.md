@@ -47,4 +47,4 @@ Hosted for free on GitHub Pages. To deploy your own copy:
 ## Author
 
 **V V Dhrishya**
-[LinkedIn](https://www.linkedin.com/in/v-v-dhrishya-ab5ba02a4) · [GitHub](https://github.com/missthxrn)
+[LinkedIn](https://www.linkedin.com/in/v-v-dhrishya-ab5ba02a4/) · [GitHub](https://github.com/missthxrn)
