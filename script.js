@@ -1,6 +1,25 @@
 const header = document.querySelector('.site-header');
 const toggle = document.getElementById('navToggle');
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
 
+/* ---------- Theme toggle (light / dark) ---------- */
+function applyTheme(theme) {
+  root.setAttribute('data-theme', theme);
+  themeToggle.textContent = theme === 'dark' ? '☀' : '☾';
+}
+
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(savedTheme || (systemPrefersDark ? 'dark' : 'light'));
+
+themeToggle.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  localStorage.setItem('theme', next);
+});
+
+/* ---------- Mobile nav ---------- */
 toggle.addEventListener('click', () => {
   header.classList.toggle('open');
 });
@@ -34,4 +53,3 @@ if (!prefersReducedMotion && hasHover) {
     star.addEventListener('animationend', () => star.remove());
   });
 }
-
